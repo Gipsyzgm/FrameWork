@@ -24,9 +24,9 @@ public class ExportUI {
     //Item代码存储位置
     static string itemScriptDir = Application.dataPath + "/MyTools/MyUI/Item/";
     //UI预制体存储位置
-    static string uiDir = "Assets/GameRes/BundleRes/Prefabs/MyUI/View/";
+    static string uiDir = "Assets/GameRes/BundleRes/MyUI/View/";
     //Item预制体存储位置
-    static string itemDir = "Assets/GameRes/BundleRes/Prefabs/MyUI/Item/";
+    static string itemDir = "Assets/GameRes/BundleRes/MyUI/Item/";
     //路径名
     static string uiPathName = "PathUI";
     static string itemPathName = "PathItem";
@@ -35,7 +35,7 @@ public class ExportUI {
     static string overrideItem = "MonoBehaviour";
     //导出类型
     static int exportType = 0;
-    static int UiLayerType = 0;
+    static PanelLayer UiLayerType = PanelLayer.Null;
 
     static string scriptDir = "";
     static string prefabDir = "";
@@ -50,7 +50,7 @@ public class ExportUI {
         prefabDir = uiDir;
         pathName = uiPathName;
         overrideScript = overrideUI;
-        UiLayerType =2;
+        UiLayerType = PanelLayer.Start;
         Export();
     }
     [MenuItem("GameObject/自动生成UI/生成UI脚本/Panel", priority = 2)]
@@ -61,7 +61,7 @@ public class ExportUI {
         prefabDir = uiDir;
         pathName = uiPathName;
         overrideScript = overrideUI;
-        UiLayerType =4;
+        UiLayerType = PanelLayer.Panel;
         Export();
     }
     [MenuItem("GameObject/自动生成UI/生成UI脚本/Tips", priority = 3)]
@@ -72,7 +72,7 @@ public class ExportUI {
         prefabDir = uiDir;
         pathName = uiPathName;
         overrideScript = overrideUI;
-        UiLayerType = 6;
+        UiLayerType = PanelLayer.Tips;
         Export();
     }
     [MenuItem("GameObject/自动生成UI/生成Item脚本", priority = 2)]
@@ -129,16 +129,16 @@ public class ExportUI {
             Debug.LogError("请检查路径配置是否正确：" + prefabDir);
             return;
         }
-
+           
         //创建Prefab
+        UnityEngine.Object prefabObj = null;
         string dirObj = prefabDir + transSelect.gameObject.name + ".prefab";
-        PrefabUtility.SaveAsPrefabAsset(transSelect.gameObject, dirObj);
-        //UnityEngine.Object prefabObj = null;
-        //if (!File.Exists(dirObj))
-        //    PrefabUtility.CreateEmptyPrefab(dirObj);
-        //prefabObj = AssetDatabase.LoadAssetAtPath(dirObj, typeof(UnityEngine.Object));
-        ////使用PrefabUtility.ReplacePrefab将场景中选中的Prefab实例制作成一个Prefab并覆盖到之前的空prefab上
-        //PrefabUtility.ReplacePrefab(transSelect.gameObject, prefabObj);
+
+        if (!File.Exists(dirObj))
+            PrefabUtility.CreateEmptyPrefab(dirObj);
+        prefabObj = AssetDatabase.LoadAssetAtPath(dirObj, typeof(UnityEngine.Object));
+        //使用PrefabUtility.ReplacePrefab将场景中选中的Prefab实例制作成一个Prefab并覆盖到之前的空prefab上
+        PrefabUtility.ReplacePrefab(transSelect.gameObject, prefabObj);
         //ToCS
         ToCS(transSelect.name, path_type_dic, path_name_dic);
 
@@ -167,8 +167,10 @@ public class ExportUI {
         if (exportType == 1)
         {
             sb.AppendLine("    public int index = 0;");
-
-            sb.AppendLine("    public void InitComponent()");
+            sb.AppendLine("    public object[] args;");
+            sb.AppendLine("    public void InitComponent(params object[] _args)");
+            sb.AppendLine("    {");
+            sb.AppendLine("        args = _args;");
         }
         else
         {   //Split切分如果后面切分符后没字符的话会切分出一个空字符            
@@ -184,25 +186,14 @@ public class ExportUI {
             sb.AppendLine("    {");
             sb.AppendLine("         args = _args;");
             sb.AppendLine("         CurViewPath=" + '"'+ tempPath + "/" + className + '"' + ";");
-            if (UiLayerType == 2)
-            {
-                sb.AppendLine("         layer = PanelLayer.Start;");
-            }
-            if (UiLayerType == 4)
-            {
-                sb.AppendLine("         layer = PanelLayer.Panel;");
-            }
-            if (UiLayerType == 6)
-            {
-                sb.AppendLine("         layer = PanelLayer.Tips;");
-            }
-
+            sb.AppendLine("         layer = PanelLayer." + UiLayerType.ToString()+ ";");
             sb.AppendLine("    }");
 
             sb.AppendLine("    public override void InitComponent()");
+            sb.AppendLine("    {");
         }
  
-        sb.AppendLine("    {");
+       
         //查找Ui变量名
         foreach (var key in path_type_dic.Keys)
         {
