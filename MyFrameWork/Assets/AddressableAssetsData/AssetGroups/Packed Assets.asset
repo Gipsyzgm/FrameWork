@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d64075c78ab112b4dbe8a8e3b66e6d65
+  m_SerializeEntries:
+  - m_GUID: 4893a87585fe28a4095e05fc2e3faf7f
+    m_Address: Assets/GameRes/ArtRes/UIAtlas/BigRach/10020.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 096d2be80d858ef4e9841052bae9e172
+    m_Address: Assets/GameRes/ArtRes/UIAtlas/BigRach/10021.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 93bc7a617b56fe5488b74fd494fedcc0
+    m_Address: Assets/GameRes/ArtRes/UIAtlas/BigRach/10022.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c866f9f988b7dc34db3d0b7e728baba3
+    m_Address: Assets/GameRes/ArtRes/UIAtlas/BigRach/10023.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 4213c3d9b011f0344868c2a874702ee2
+    m_Address: Assets/GameRes/ArtRes/UIAtlas/BigRach/10024.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 05663811ff20d9f4cb58a106e27515d3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 42956a3d567cd8940bcd7c9db19ae2a1, type: 2}
+    - {fileID: 11400000, guid: ebd4ba6ff1480424c97daf8aa5273438, type: 2}

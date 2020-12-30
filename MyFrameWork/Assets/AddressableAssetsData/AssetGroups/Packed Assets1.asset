@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets1
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets1
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1b28e9a99a32806498b3b8f37f7673fe
+  m_SerializeEntries:
+  - m_GUID: 8bf3c2ca37a2edb4da8c86e884b134f7
+    m_Address: Assets/GameRes/BundleRes/MySource/BackMusic.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f2fb8153f15abdc439c86aca7280f54f
+    m_Address: Assets/GameRes/BundleRes/MySource/Click.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 05663811ff20d9f4cb58a106e27515d3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 96bdaddc0b982d7438655d5d62238c84, type: 2}
+    - {fileID: 11400000, guid: 24d52f9b57fb1c6419bd19154b3d2966, type: 2}

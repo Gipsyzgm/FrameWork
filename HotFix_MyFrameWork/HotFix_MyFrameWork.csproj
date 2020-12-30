@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{738BF6E1-8ADB-491B-BD8B-043A0FFF73E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotFix_MyFrameWork</RootNamespace>
+    <AssemblyName>HotFix_MyFrameWork</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\HotFix_CrateDll\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="MyUI\Item\Item.cs" />
+    <Compile Include="MyUI\Item\PathItem.cs" />
+    <Compile Include="MyUI\UI-Frame\PanelBase.cs" />
+    <Compile Include="MyUI\UI-Frame\PanelMgr.cs" />
+    <Compile Include="MyUI\View\CommonConfirmPl.cs" />
+    <Compile Include="MyUI\View\GamePl.cs" />
+    <Compile Include="MyUI\View\MenuePl.cs" />
+    <Compile Include="MyUI\View\OverPl.cs" />
+    <Compile Include="MyUI\View\PathUI.cs" />
+    <Compile Include="MyUI\View\SettingPl.cs" />
+    <Compile Include="MyUI\View\StartPl.cs" />
+    <Compile Include="MyUI\View\TestPanel.cs" />
+    <Compile Include="MyUI\View\VersionCheckPl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Assembly-CSharp.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\ILRuntime.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.Addressables.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.Addressables.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.ResourceManager.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.Rider.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.TextMeshPro.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.Timeline.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.Timeline.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\Unity.VSCode.Editor.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\UnityEditor.CacheServer.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\UnityEditor.TestRunner.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\UnityEditor.UI.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\UnityEngine.TestRunner.dll" />
+    <Analyzer Include="..\MyFrameWork\Library\ScriptAssemblies\UnityEngine.UI.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-Editor">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="ILRuntime">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\ILRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>UnityDlls\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MyFrameWork\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>UnityDlls\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
